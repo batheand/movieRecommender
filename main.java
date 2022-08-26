@@ -1,6 +1,6 @@
 /*
  * categories
- * -horror,action,comedy,crime,fiction,drama etc.
+ * -horror,action,comedy,crime,fiction,drama, western, romance, documentary, musical, animation, bolywood etc.
  * -wb, disney, paramount, indie etc.
  * -
  */
@@ -13,7 +13,7 @@
 
   public class main{
     public static void main(String[] args){
-       System.out.println("xx");
+       
   
 
     }

@@ -1,5 +1,5 @@
 public class categories extends movie{
-    String[] Action, Sci_Fi, Drama, Horor, Comedy; //this should continue 
+    String[] Action, Sci_Fi, Drama, Horor, Comedy, Romance, Documentary, Animation, Musical, Bolywood; //this should continue 
 
     public categories(String Name, String movieCat, int Year) {
         super(Name, movieCat, Year);

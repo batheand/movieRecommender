@@ -9,8 +9,11 @@ public class categories extends movie{
     /*
         will store the categories of movies
      */
-    int[] categories = new int [3];
 
+    // action, crime, thriller, drama, comedy, mystery, fantasy, horror, romance, western
+    boolean[] categories = new boolean [10];
+
+    /* 
     public void setCategories(String movieCatt) {
 
         if(super.movieCategorie == "Action"){
@@ -43,6 +46,7 @@ public class categories extends movie{
             }     
         }
     }
+    */
 
     public void setCategories(int [] catg) {
         categories = catg;

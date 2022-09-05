@@ -1,56 +1,21 @@
-public class categories extends movie{
-    String[] Action, Sci_Fi, Drama, Horor, Comedy, Romance, Documentary, Animation, Musical, Bolywood; //this should continue 
 
-    public categories(String Name, String movieCat, int Year) {
-        super(Name, movieCat, Year);
+
+public class categories extends movie{
+    
+    // action, crime, thriller, drama, comedy, mystery, fantasy, horror, romance, western, animation, musical, scifi
+    int[] categories = new int [13];
+
+    public categories() { 
         
     }
+    
 
-    /*
-        will store the categories of movies
-     */
-
-    // action, crime, thriller, drama, comedy, mystery, fantasy, horror, romance, western
-    boolean[] categories = new boolean [10];
-
-    /* 
-    public void setCategories(String movieCatt) {
-
-        if(super.movieCategorie == "Action"){
-            for(int x = 0 ; x <= 10 ; x++ ) {
-                Action[x] = super.movieName;   
-            }     
-        }
-
-        if(super.movieCategorie == "Sci_Fi"){
-            for(int x = 0 ; x <= 10 ; x++ ) {
-                Sci_Fi[x] = super.movieName;   
-            }     
-        }
-
-        if(super.movieCategorie == "Drama"){
-            for(int x = 0 ; x <= 10 ; x++ ) {
-                Drama[x] = super.movieName;   
-            }     
-        }
-
-        if(super.movieCategorie == "Horor"){
-            for(int x = 0 ; x <= 10 ; x++ ) {
-                Horor[x] = super.movieName;   
-            }     
-        }
-
-        if(super.movieCategorie == "Comedy"){
-            for(int x = 0 ; x <= 10 ; x++ ) {
-                Comedy[x] = super.movieName;   
-            }     
-        }
+    public void setCategories(int[] catgrs) {
+        categories = catgrs; 
     }
-    */
 
-    public void setCategories(int [] catg) {
-        categories = catg;
-    }
+
+   
 
     public int[] getCategories() {
         /*

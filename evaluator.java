@@ -7,5 +7,11 @@ public class evaluator {
 
      */
 
-    movie [] movies = new movie[50];
+     // movie [] movies = new movie[50];
+      
+    
+      
+      
+      movies[0].movie("Name", 1999, categoriesTemp,producersTemp);
+
 }

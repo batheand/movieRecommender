@@ -7,28 +7,26 @@ public class distribution extends movie{
      // warner bros, disney, paramount, 20th century studios, Universal, Lionsgate, Columbia Pictures, DreamWorks Pictures, New Line Cinema; Walt Disney Pictures, 
      // Walt Disney Studios, LucasFilm, Sony Pictures, Legendary Entertainment, Marvel Studios, Pixar,Lionsgate
 
-    boolean[] producers = new boolean[16];
+     int[] producers = new int[16];
 
-    public distribution(String Name, String movieCat, int Year) {
-        super(Name, movieCat, Year);
-        //TODO Auto-generated constructor stub
+
+
+    public distribution() { 
+        
+    }
+    
+
+    public void setProducers(int[] catgrs) {
+        producers = catgrs; 
     }
 
-    int[] distributors = new int [3];
 
-    public void setDistributors() {
+   
+
+    public int[] getProducers() {
         /*
-         * opened for constructing with user input
+         * this part either be a straight string that writes "Action/Drama..." or just list the movies like a table
          */
-
-
-    }
-
-    public void setDistributors(int [] catg) {
-        distributors = catg;
-    }
-
-    public int[] getDistributors() {
-        return distributors;
+        return producers;
     }
 }

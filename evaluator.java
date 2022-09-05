@@ -7,11 +7,23 @@ public class evaluator {
 
      */
 
-     // movie [] movies = new movie[50];
-      
+    movie [] movies = new movie[50];
     
-      
-      
-      movies[0].movie("Name", 1999, categoriesTemp,producersTemp);
+
+    for (int i=0; i<50; i++) {
+        movie temp = new movie();
+        temp.emptyMovie();
+        movies[i] = temp;
+    }
+     // action, crime, thriller, drama, comedy, mystery, fantasy, horror, romance, animation, musical, scifi, family
+    int [] categoriesTemp = new int[] {0,1,1,0,1,1,0,0,0,0,0,0,0};
+    
+    movies[0].fillMovie("American Psycho", 2000, categoriesTemp, "Columbia Pictures");
+
+    // Columbia, Paramount, 20th Century, Warner Bros. Walt Disney, Sony, MGM, Universal, Neon, Lionsgate, Marvel Studios, Dreamworks, Open Road, Orion, Focus, Miramax
+
+
+
 
 }
+

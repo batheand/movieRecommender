@@ -4,8 +4,7 @@ public class distribution extends movie{
      */
 
    
-     // warner bros, disney, paramount, 20th century studios, Universal, Lionsgate, Columbia Pictures, DreamWorks Pictures, New Line Cinema; Walt Disney Pictures, 
-     // Walt Disney Studios, LucasFilm, Sony Pictures, Legendary Entertainment, Marvel Studios, Pixar,Lionsgate
+     
 
      int[] producers = new int[16];
 

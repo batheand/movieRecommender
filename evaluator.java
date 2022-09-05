@@ -19,6 +19,9 @@ public class evaluator {
     int [] categoriesTemp = new int[] {0,1,1,0,1,1,0,0,0,0,0,0,0};
     
     movies[0].fillMovie("American Psycho", 2000, categoriesTemp, "Columbia Pictures");
+    movies[1].fillMovie("The Wolf of the Wallstreet", 2013, categoriesTemp, "Paramount Pictures");
+    movies[2].fillMovie("Fight Club", 2003, categoriesTemp, "20th Century Fox");
+
 
     // Columbia, Paramount, 20th Century, Warner Bros. Walt Disney, Sony, MGM, Universal, Neon, Lionsgate, Marvel Studios, Dreamworks, Open Road, Orion, Focus, Miramax
 

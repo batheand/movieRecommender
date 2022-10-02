@@ -1,11 +1,16 @@
 public class evaluator {
     /*
-        this class will create an object array of the class movies and store the list of movies
-        this class will store the liked movies
+        this class will create an object array of the class movies and store the list of movies // mostly done
+        this class will store the liked movies 
         this class will have methods for evaluating the person's interests and give numeric values for them, using these interest values to find the top 3 matches etc.
         (if we can) there will be a method to find patterns such as having a strong preference over an actor or an era, which'd (hopefully) determine favorites and help the recommendation process 
 
      */
+
+    public void profiling() {
+        
+    }
+
     public void initializeMovies() {
         movie [] movies;
         movies = new movie[50]; 
@@ -16,13 +21,17 @@ public class evaluator {
             temp.emptyMovie();
             movies[i] = temp;
         }
-
-         // action, crime, thriller, drama, comedy, mystery, fantasy, horror, romance, animation, musical, scifi, family
-        int [] categoriesTemp = new int[] {0,1,1,0,1,1,0,0,0,0,0,0,0};
-         // Columbia, Paramount, 20th Century, Warner Bros. Walt Disney, Sony, MGM, Universal, Neon, Lionsgate, Marvel Studios, Dreamworks, Open Road, Orion, Focus, Mirama
+        // Columbia, Paramount, 20th Century, Warner Bros. Walt Disney, Sony, MGM, Universal, Neon, Lionsgate, Marvel Studios, Dreamworks, Open Road, Orion, Focus, Mirama
+        
+        int [] categoriesTemp;
+        // action, crime, thriller, drama, comedy, mystery, fantasy, horror, romance, animation, musical, scifi, family
+        categoriesTemp = new int [] {0,1,1,0,1,1,0,0,0,0,0,0,0}; //ilk film için bunu
         movies[0].fillMovie("American Psycho", 2000, categoriesTemp, "Columbia Pictures");
+        categoriesTemp = new int [] {0,1,1,0,1,1,0,0,0,0,0,0,0}; //ikinci film için bunu
         movies[1].fillMovie("The Wolf of the Wallstreet", 2013, categoriesTemp, "Paramount Pictures");
+        //3. için buraya
         movies[2].fillMovie("Fight Club", 2003, categoriesTemp, "20th Century Fox");
+        //4. için buraya and so on..
         movies[3].fillMovie("The Godfather", 1972, categoriesTemp, "20th Century Fox");
         movies[4].fillMovie("Joker", 2019, categoriesTemp, "20th Century Fox");
         movies[5].fillMovie("The Batman", 2022, categoriesTemp, "20th Century Fox");
@@ -71,6 +80,8 @@ public class evaluator {
         movies[48].fillMovie("La La Land ", 2016, categoriesTemp, "20th Century Fox");
         movies[49].fillMovie("The Lord of the Rings: The Fellowship of the Ring", 2001, categoriesTemp, "20th Century Fox");    
     }
+
+    
     
     
     

@@ -17,6 +17,23 @@ public class evaluator {
             movieMatchList[i] [1] = i;
             movieMatchList[i] [2] = matchPercentCalculator(i, profiledCategories);
         }
+        movieMatchList = sorter(movieMatchList);
+    }
+
+    public int [] [] sorter (int [] [] movieMatchList) {
+        boolean wasntSorted = false;
+        do {
+            wasntSorted = false;
+            for (int i = 0; i<49; i++) {
+                if (movieMatchList [i][2]< movieMatchList [i+1][2]) {
+                    int temp = movieMatchList [i][2];
+                    movieMatchList [i][2] = movieMatchList [i+1][2];
+                    movieMatchList [i+1][2] = temp;
+                    wasntSorted = true;
+                }
+            }
+        } while (wasntSorted);
+        return movieMatchList;
     }
 
     public int matchPercentCalculator (int movieNum, double [] profiledCategories) {

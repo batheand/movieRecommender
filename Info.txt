@@ -1,0 +1,4 @@
+This project visions an algorithm that's capable of profiling someone by their likes and dislikes, and use this profilisation for recommending movies and
+also providing match percantage. It gives a list of 3 movies which would be picked by the algorithm as the top 3 matches.
+
+The project is in its early stages

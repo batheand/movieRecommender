@@ -1,3 +1,5 @@
+import java.util.Arrays;
+
 public class evaluator {
     public static movie [] movies;
     
@@ -8,13 +10,70 @@ public class evaluator {
         (if we can) there will be a method to find patterns such as having a strong preference over an actor or an era, which'd (hopefully) determine favorites and help the recommendation process 
 
      */
-
-    public void profiling() {
-        
+    public void recommender() {
+        double [] profiledCategories = profiling();
+        int [] [] movieMatchList = new int [50] [2];
+        for (int i = 0; i<50; i++) {
+            movieMatchList[i] [1] = i;
+            movieMatchList[i] [2] = matchPercentCalculator(i, profiledCategories);
+        }
     }
 
-    public void rater(int number, int rate) {
-        movies[number].setRating(rate);
+    public int matchPercentCalculator (int movieNum, double [] profiledCategories) {
+        int [] categories = movies [movieNum].getCategories();
+        int points = 0;
+        for (int i = 0; i<13; i++) {
+            if(profiledCategories[i]<1.5) {
+                if(categories[i]==0) {
+                    points += 7;
+                } else {
+                    points += 0;
+                }
+            } else if (profiledCategories[i] <= 1.5 && profiledCategories[i] < 2.5) {
+                if(categories[i]==0) {
+                    points += 6;
+                } else {
+                    points += 1;
+                }
+            } else if (profiledCategories[i] <= 2.5 && profiledCategories[i] < 3.5) {
+                if(categories[i]==0) {
+                    points += 4;
+                } else {
+                    points += 4;
+                }
+            } else if (profiledCategories[i] <= 3.5 && profiledCategories[i] < 4.5) {
+                if(categories[i]==0) {
+                    points += 6;
+                } else {
+                    points += 1;
+                }
+            } else {
+                if(categories[i]==0) {
+                    points += 7;
+                } else {
+                    points += 0;
+                }
+            }
+        }
+        movies[movieNum].setMatchPercentage(points);
+        return points;
+    }
+    public double [] profiling() {
+        double [] profiledCategories = {0,0,0,0,0,0,0,0,0,0,0,0,0};
+        for (int i = 0; i<50; i++) {
+            int rating = movies[i].getRating();
+            int [] categories = movies[i].getCategories();
+            for (int j = 0; j<13; j++) {
+                if (!(categories[j]==0)) {
+                    profiledCategories[j] = (profiledCategories[j] + (rating*categories[j]))/2;
+                }
+            }
+        }
+        return profiledCategories;
+    }
+
+    public void rater(int movieNum, int rate) {
+        movies[movieNum].setRating(rate);
     }
     
 

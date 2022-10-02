@@ -4,12 +4,23 @@ public class movie extends evaluator {
     //siksok push muhs deniyoz, selamlar
     String movieName;
     int movieYear;
-    int rating = 3;
+    int rating = 3, matchPercentage;
 
     public void setRating(int rate) {
         rating = rate;
     }
-    
+
+    public int getRating() {
+        return rating;
+    }
+
+    public void setMatchPercentage(int percent) {
+        matchPercentage = percent;
+    }
+
+    public int getMatchPercentage() {
+        return matchPercentage;
+    }
     
     public movie () {
         emptyMovie();
@@ -19,6 +30,10 @@ public class movie extends evaluator {
     distribution distribution = new distribution();
     int[] xx = new int [] {1,2,3,4,5,6,7,8,9,0,1,2,3};
     int[] xy = new int [] {1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6};
+
+    public int [] getCategories() {
+        return categories.getCategories();
+    }
 
 
     public void emptyMovie() {

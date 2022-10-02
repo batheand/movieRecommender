@@ -20,7 +20,7 @@ public class movie extends evaluator {
         movieName = "";
         movieYear = 1111;
         categories.setCategories(xx);
-        distribution.setProducers(xy);
+        distribution.setProducers("");
     }
     public void fillMovie(String Name , int Year, int [] categoriesInp , String producersInp){
         movieName = Name;

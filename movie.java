@@ -6,6 +6,11 @@ public class movie extends evaluator {
     int movieYear;
     int rating = 3, matchPercentage;
 
+    String producers;
+
+    int[] categories = new int [13];
+
+
     public void setRating(int rate) {
         rating = rate;
     }
@@ -26,27 +31,24 @@ public class movie extends evaluator {
         emptyMovie();
     }
     
-    categories categories = new categories();
-    distribution distribution = new distribution();
+   
     int[] xx = new int [] {1,2,3,4,5,6,7,8,9,0,1,2,3};
-    int[] xy = new int [] {1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6};
-
     public int [] getCategories() {
-        return categories.getCategories();
+        return categories;
     }
 
 
     public void emptyMovie() {
         movieName = "";
         movieYear = 1111;
-        categories.setCategories(xx);
-        distribution.setProducers("");
+        categories = xx;
+        producers = "";
     }
     public void fillMovie(String Name , int Year, int [] categoriesInp , String producersInp){
         movieName = Name;
         movieYear = Year;
-        categories.setCategories(categoriesInp);
-        distribution.setProducers(producersInp);
+        categories = categoriesInp;
+        producers = producersInp;
     }
 
 

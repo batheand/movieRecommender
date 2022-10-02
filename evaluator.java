@@ -10,17 +10,18 @@ public class evaluator {
 
      */
     public void recommender() {
-        movie [] movies = initializeMovies();
+        movie [] movies = new movie [50];
+        movies = initializeMovies();
         double [] profiledCategories = profiling(movies);
         int [] [] movieMatchList = new int [50] [2];
         for (int i = 0; i<50; i++) {
-            movieMatchList[i] [1] = i;
-            movieMatchList[i] [2] = matchPercentCalculator(movies, i, profiledCategories);
+            movieMatchList[i] [0] = i;
+            movieMatchList[i] [1] = matchPercentCalculator(movies, i, profiledCategories);
         }
         movieMatchList = sorter(movieMatchList);
-        System.out.println(movies[movieMatchList[1][1]].movieName + " " + movieMatchList[1][2]);
-        System.out.println(movies[movieMatchList[2][1]].movieName + " " + movieMatchList[2][2]);
-        System.out.println(movies[movieMatchList[3][1]].movieName + " " + movieMatchList[3][2]);
+        System.out.println(movies[movieMatchList[0][0]].movieName + " " + movieMatchList[0][1]);
+        System.out.println(movies[movieMatchList[1][0]].movieName + " " + movieMatchList[1][1]);
+        System.out.println(movies[movieMatchList[2][0]].movieName + " " + movieMatchList[2][1]);
     }
 
     public int [] [] sorter (int [] [] movieMatchList) {
@@ -28,10 +29,10 @@ public class evaluator {
         do {
             wasntSorted = false;
             for (int i = 0; i<49; i++) {
-                if (movieMatchList [i][2]< movieMatchList [i+1][2]) {
-                    int temp = movieMatchList [i][2];
-                    movieMatchList [i][2] = movieMatchList [i+1][2];
-                    movieMatchList [i+1][2] = temp;
+                if (movieMatchList [i][1]< movieMatchList [i+1][1]) {
+                    int temp = movieMatchList [i][1];
+                    movieMatchList [i][1] = movieMatchList [i+1][1];
+                    movieMatchList [i+1][1] = temp;
                     wasntSorted = true;
                 }
             }

@@ -6,7 +6,7 @@ public class distribution extends movie{
    
      
 
-     String producers;
+     
 
 
 

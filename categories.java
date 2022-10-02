@@ -3,11 +3,7 @@
 public class categories extends movie{
     
     // action, crime, thriller, drama, comedy, mystery, fantasy, horror, romance, western, animation, musical, scifi
-    int[] categories = new int [13];
-
-    public categories() { 
-        
-    }
+    
     
 
     public void setCategories(int[] catgrs) {

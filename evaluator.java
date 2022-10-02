@@ -1,4 +1,6 @@
 public class evaluator {
+    public static movie [] movies;
+    
     /*
         this class will create an object array of the class movies and store the list of movies // mostly done
         this class will store the liked movies 
@@ -11,8 +13,13 @@ public class evaluator {
         
     }
 
+    public void rater(int number, int rate) {
+        movies[number].setRating(rate);
+    }
+    
+
     public void initializeMovies() {
-        movie [] movies;
+        
         movies = new movie[50]; 
     
     
@@ -80,6 +87,8 @@ public class evaluator {
         movies[48].fillMovie("La La Land ", 2016, categoriesTemp, "20th Century Fox");
         movies[49].fillMovie("The Lord of the Rings: The Fellowship of the Ring", 2001, categoriesTemp, "20th Century Fox");    
     }
+
+    
 
     
     

@@ -4,6 +4,11 @@ public class movie extends evaluator {
     //siksok push muhs deniyoz, selamlar
     String movieName;
     int movieYear;
+    int rating = 3;
+
+    public void setRating(int rate) {
+        rating = rate;
+    }
     
     
     public movie () {

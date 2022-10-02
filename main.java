@@ -11,10 +11,12 @@
     additionally, if we can, we'll add the option to like or dislike a movie from the terminal menu. however if failed this will be done by hand in the code.
   */
 
-  public class main{
-    public static void main(String[] args){
-       
+public class main{
+  public static void main(String[] args){
+    evaluator starter = new evaluator();
+    starter.initializeMovies();
+
   
 
-    }
-    }
+  }
+}

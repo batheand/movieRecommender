@@ -6,27 +6,29 @@ public class evaluator {
         (if we can) there will be a method to find patterns such as having a strong preference over an actor or an era, which'd (hopefully) determine favorites and help the recommendation process 
 
      */
-
-    movie [] movies = new movie[50];
+    public void initializeMovies() {
+        movie [] movies;
+        movies = new movie[50]; 
     
+    
+        for (int i=0; i<50; i++) {
+            movie temp = new movie();
+            temp.emptyMovie();
+            movies[i] = temp;
+        }
 
-    for (int i=0; i<50; i++) {
-        movie temp = new movie();
-        temp.emptyMovie();
-        movies[i] = temp;
+         // action, crime, thriller, drama, comedy, mystery, fantasy, horror, romance, animation, musical, scifi, family
+        int [] categoriesTemp = new int[] {0,1,1,0,1,1,0,0,0,0,0,0,0};
+         // Columbia, Paramount, 20th Century, Warner Bros. Walt Disney, Sony, MGM, Universal, Neon, Lionsgate, Marvel Studios, Dreamworks, Open Road, Orion, Focus, Mirama
+        movies[0].fillMovie("American Psycho", 2000, categoriesTemp, "Columbia Pictures");
+        movies[1].fillMovie("The Wolf of the Wallstreet", 2013, categoriesTemp, "Paramount Pictures");
+        movies[2].fillMovie("Fight Club", 2003, categoriesTemp, "20th Century Fox");
     }
-     // action, crime, thriller, drama, comedy, mystery, fantasy, horror, romance, animation, musical, scifi, family
-    int [] categoriesTemp = new int[] {0,1,1,0,1,1,0,0,0,0,0,0,0};
     
-    movies[0].fillMovie("American Psycho", 2000, categoriesTemp, "Columbia Pictures");
-    movies[1].fillMovie("The Wolf of the Wallstreet", 2013, categoriesTemp, "Paramount Pictures");
-    movies[2].fillMovie("Fight Club", 2003, categoriesTemp, "20th Century Fox");
+    
+    
+    
 
 
-    // Columbia, Paramount, 20th Century, Warner Bros. Walt Disney, Sony, MGM, Universal, Neon, Lionsgate, Marvel Studios, Dreamworks, Open Road, Orion, Focus, Miramax
-
-
-
-
+   
 }
-

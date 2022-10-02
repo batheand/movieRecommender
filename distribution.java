@@ -6,7 +6,7 @@ public class distribution extends movie{
    
      
 
-     int[] producers = new int[16];
+     String producers;
 
 
 
@@ -15,14 +15,14 @@ public class distribution extends movie{
     }
     
 
-    public void setProducers(int[] catgrs) {
+    public void setProducers(String catgrs) {
         producers = catgrs; 
     }
 
 
    
 
-    public int[] getProducers() {
+    public String getProducers() {
         /*
          * this part either be a straight string that writes "Action/Drama..." or just list the movies like a table
          */

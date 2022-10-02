@@ -6,8 +6,10 @@ public class movie extends evaluator {
     int movieYear;
     
     
-
-
+    public movie () {
+        emptyMovie();
+    }
+    
     categories categories = new categories();
     distribution distribution = new distribution();
     int[] xx = new int [] {1,2,3,4,5,6,7,8,9,0,1,2,3};
@@ -20,7 +22,7 @@ public class movie extends evaluator {
         categories.setCategories(xx);
         distribution.setProducers(xy);
     }
-    public void fillMovie(String Name , int Year, int [] categoriesInp , int [] producersInp){
+    public void fillMovie(String Name , int Year, int [] categoriesInp , String producersInp){
         movieName = Name;
         movieYear = Year;
         categories.setCategories(categoriesInp);

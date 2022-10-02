@@ -1,7 +1,6 @@
 import java.util.Arrays;
 
 public class evaluator {
-    public static movie [] movies;
     
     /*
         this class will create an object array of the class movies and store the list of movies // mostly done
@@ -11,13 +10,17 @@ public class evaluator {
 
      */
     public void recommender() {
-        double [] profiledCategories = profiling();
+        movie [] movies = initializeMovies();
+        double [] profiledCategories = profiling(movies);
         int [] [] movieMatchList = new int [50] [2];
         for (int i = 0; i<50; i++) {
             movieMatchList[i] [1] = i;
-            movieMatchList[i] [2] = matchPercentCalculator(i, profiledCategories);
+            movieMatchList[i] [2] = matchPercentCalculator(movies, i, profiledCategories);
         }
         movieMatchList = sorter(movieMatchList);
+        System.out.println(movies[movieMatchList[1][1]].movieName + " " + movieMatchList[1][2]);
+        System.out.println(movies[movieMatchList[2][1]].movieName + " " + movieMatchList[2][2]);
+        System.out.println(movies[movieMatchList[3][1]].movieName + " " + movieMatchList[3][2]);
     }
 
     public int [] [] sorter (int [] [] movieMatchList) {
@@ -36,7 +39,7 @@ public class evaluator {
         return movieMatchList;
     }
 
-    public int matchPercentCalculator (int movieNum, double [] profiledCategories) {
+    public int matchPercentCalculator (movie [] movies, int movieNum, double [] profiledCategories) {
         int [] categories = movies [movieNum].getCategories();
         int points = 0;
         for (int i = 0; i<13; i++) {
@@ -75,7 +78,7 @@ public class evaluator {
         movies[movieNum].setMatchPercentage(points);
         return points;
     }
-    public double [] profiling() {
+    public double [] profiling(movie [] movies) {
         double [] profiledCategories = {0,0,0,0,0,0,0,0,0,0,0,0,0};
         for (int i = 0; i<50; i++) {
             int rating = movies[i].getRating();
@@ -89,13 +92,12 @@ public class evaluator {
         return profiledCategories;
     }
 
-    public void rater(int movieNum, int rate) {
+    public void rater(movie [] movies, int movieNum, int rate) {
         movies[movieNum].setRating(rate);
     }
-    
 
-    public void initializeMovies() {
-        
+    public movie [] initializeMovies() {
+        movie [] movies;
         movies = new movie[50]; 
     
     
@@ -257,6 +259,8 @@ public class evaluator {
         
         categoriesTemp = new int [] {0,0,0,0,0,0,1,0,0,0,0,0,0,1};
         movies[49].fillMovie("The Lord of the Rings: The Fellowship of the Ring", 2001, categoriesTemp, "20th Century Fox");    
+
+        return movies;
     }
 
     

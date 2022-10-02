@@ -14,9 +14,6 @@
 public class main{
   public static void main(String[] args){
     evaluator starter = new evaluator();
-    starter.initializeMovies();
-
-  
-
+    starter.recommender();
   }
 }

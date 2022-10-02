@@ -9,9 +9,7 @@ public class evaluator {
         (if we can) there will be a method to find patterns such as having a strong preference over an actor or an era, which'd (hopefully) determine favorites and help the recommendation process 
 
      */
-    public void recommender() {
-        movie [] movies = new movie [50];
-        movies = initializeMovies();
+    public void recommender(movie [] movies) {
         double [] profiledCategories = profiling(movies);
         int [] [] movieMatchList = new int [50] [2];
         for (int i = 0; i<50; i++) {
@@ -93,8 +91,9 @@ public class evaluator {
         return profiledCategories;
     }
 
-    public void rater(movie [] movies, int movieNum, int rate) {
+    public movie [] rater(movie [] movies, int movieNum, int rate) {
         movies[movieNum].setRating(rate);
+        return movies;
     }
 
     public movie [] initializeMovies() {

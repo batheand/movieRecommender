@@ -42,32 +42,33 @@ public class evaluator {
         int [] categories = movies [movieNum].getCategories();
         int points = 0;
         for (int i = 0; i<13; i++) {
+            Integer category = categories[i];
             if(profiledCategories[i]<1.5) {
-                if(categories[i]==0) {
+                if(category.equals(0)) {
                     points += 7;
                 } else {
                     points += 0;
                 }
             } else if (profiledCategories[i] <= 1.5 && profiledCategories[i] < 2.5) {
-                if(categories[i]==0) {
+                if (category.equals(0)) {
                     points += 6;
                 } else {
                     points += 1;
                 }
             } else if (profiledCategories[i] <= 2.5 && profiledCategories[i] < 3.5) {
-                if(categories[i]==0) {
+                if(category.equals(0)) {
                     points += 4;
                 } else {
                     points += 4;
                 }
             } else if (profiledCategories[i] <= 3.5 && profiledCategories[i] < 4.5) {
-                if(categories[i]==0) {
+                if(category.equals(0)){
                     points += 6;
                 } else {
                     points += 1;
                 }
             } else {
-                if(categories[i]==0) {
+                if(category.equals(0)) {
                     points += 7;
                 } else {
                     points += 0;
@@ -83,7 +84,8 @@ public class evaluator {
             int rating = movies[i].getRating();
             int [] categories = movies[i].getCategories();
             for (int j = 0; j<13; j++) {
-                if (!(categories[j]==0)) {
+                Integer category = categories[j];
+                if (!(category.equals(0))) {
                     profiledCategories[j] = (profiledCategories[j] + (rating*categories[j]))/2;
                 }
             }

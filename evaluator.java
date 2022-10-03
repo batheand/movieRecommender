@@ -9,15 +9,24 @@ public class evaluator {
      */
     public void recommender(movie [] movies) {
         double [] profiledCategories = profiling(movies);
-        int [] [] movieMatchList = new int [50] [2];
+        int [] [] movieMatchList = new int [50] [3];
         for (int i = 0; i<50; i++) {
-            movieMatchList[i] [0] = i;
-            movieMatchList[i] [1] = matchPercentCalculator(movies, i, profiledCategories);
+            Integer rating = movies[i].getRating();
+            System.out.println(rating);
+            if (!rating.equals(3)) {
+                movieMatchList[i] [0] = i;
+                movieMatchList[i] [1] = 0;
+                
+            } else {
+                
+                movieMatchList[i] [0] = i;
+                movieMatchList[i] [1] = matchPercentCalculator(movies, i, profiledCategories);
+            }
         }
         movieMatchList = sorter(movieMatchList);
-        System.out.println(movies[movieMatchList[0][0]].movieName + " " + movieMatchList[0][1]);
-        System.out.println(movies[movieMatchList[1][0]].movieName + " " + movieMatchList[1][1]);
-        System.out.println(movies[movieMatchList[2][0]].movieName + " " + movieMatchList[2][1]);
+        System.out.println(movies[movieMatchList[0][0]].movieName + " " +(movieMatchList[0][1] + 2));
+        System.out.println(movies[movieMatchList[1][0]].movieName + " " +(movieMatchList[1][1] + 2));
+        System.out.println(movies[movieMatchList[2][0]].movieName + " " +(movieMatchList[2][1] + 2));
     }
 
     public int [] [] sorter (int [] [] movieMatchList) {
@@ -39,7 +48,7 @@ public class evaluator {
     public int matchPercentCalculator (movie [] movies, int movieNum, double [] profiledCategories) {
         int [] categories = movies [movieNum].getCategories();
         int points = 0;
-        for (int i = 0; i<13; i++) {
+        for (int i = 0; i<14; i++) {
             Integer category = categories[i];
             if(profiledCategories[i]<1.5) {
                 if(category.equals(0)) {
@@ -77,13 +86,13 @@ public class evaluator {
         return points;
     }
     public double [] profiling(movie [] movies) { // hata burda
-        double [] profiledCategories = {0,0,0,0,0,0,0,0,0,0,0,0,0};
+        double [] profiledCategories = {0,0,0,0,0,0,0,0,0,0,0,0,0,0};
         for (int i = 0; i<50; i++) {
             Integer rating = movies[i].getRating();
             //System.out.println(rating);
             if (!rating.equals(3)) {
                 int [] categories = movies[i].getCategories();
-                for (int j = 0; j<13; j++) {
+                for (int j = 0; j<14; j++) {
                     Integer category = categories[j] ;
                     Double profiledCategory = profiledCategories[j];
                     if (!(category.equals(0))) {
@@ -96,9 +105,11 @@ public class evaluator {
                 }
             }            
         }
+        /* 
         for (int j = 0; j<13; j++) {
             System.out.println(profiledCategories[j]);
         }
+        */
         return profiledCategories;
     }
 

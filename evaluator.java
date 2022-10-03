@@ -13,15 +13,16 @@ public class evaluator {
         for (int i = 0; i<50; i++) {
             Integer rating = movies[i].getRating();
             System.out.println(rating);
-            if (!rating.equals(3)) {
+            movieMatchList[i] [1] = 5;
+            if (rating != 3) {
                 movieMatchList[i] [0] = i;
                 movieMatchList[i] [1] = 0;
                 
-            } else {
-                
+            } /*else {
+
                 movieMatchList[i] [0] = i;
                 movieMatchList[i] [1] = matchPercentCalculator(movies, i, profiledCategories);
-            }
+            } */
         }
         movieMatchList = sorter(movieMatchList);
         System.out.println(movies[movieMatchList[0][0]].movieName + " " +(movieMatchList[0][1] + 2));
@@ -85,7 +86,7 @@ public class evaluator {
         movies[movieNum].setMatchPercentage(points);
         return points;
     }
-    public double [] profiling(movie [] movies) { // hata burda
+    public double [] profiling(movie [] movies) { 
         double [] profiledCategories = {0,0,0,0,0,0,0,0,0,0,0,0,0,0};
         for (int i = 0; i<50; i++) {
             Integer rating = movies[i].getRating();

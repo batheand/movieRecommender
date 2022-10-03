@@ -1,5 +1,3 @@
-import java.util.Arrays;
-
 public class evaluator {
     
     /*
@@ -78,22 +76,33 @@ public class evaluator {
         movies[movieNum].setMatchPercentage(points);
         return points;
     }
-    public double [] profiling(movie [] movies) {
+    public double [] profiling(movie [] movies) { // hata burda
         double [] profiledCategories = {0,0,0,0,0,0,0,0,0,0,0,0,0};
         for (int i = 0; i<50; i++) {
-            int rating = movies[i].getRating();
-            int [] categories = movies[i].getCategories();
-            for (int j = 0; j<13; j++) {
-                Integer category = categories[j];
-                if (!(category.equals(0))) {
-                    profiledCategories[j] = (profiledCategories[j] + (rating*categories[j]))/2;
+            Integer rating = movies[i].getRating();
+            //System.out.println(rating);
+            if (!rating.equals(3)) {
+                int [] categories = movies[i].getCategories();
+                for (int j = 0; j<13; j++) {
+                    Integer category = categories[j] ;
+                    Double profiledCategory = profiledCategories[j];
+                    if (!(category.equals(0))) {
+                        if (profiledCategory.equals(0)) {
+                            profiledCategories[j] = (profiledCategories[j] + (rating*category));
+                        }else{
+                        profiledCategories[j] = (profiledCategories[j] + (rating*category))/2;
+                        }
+                    }
                 }
-            }
+            }            
+        }
+        for (int j = 0; j<13; j++) {
+            System.out.println(profiledCategories[j]);
         }
         return profiledCategories;
     }
 
-    public movie [] rater(movie [] movies, int movieNum, int rate) {
+    public movie [] rater(movie [] movies, int movieNum, int rate) { //works
         movies[movieNum].setRating(rate);
         return movies;
     }

@@ -8,7 +8,38 @@ public class ui {
         movies = evaluate.initializeMovies();
         
         boolean exit = false;
+       
+        System.out.println("Welcome to the movie recommender!");
+        System.out.println("Choose a few movies from our list and rate them between 1-5 (1: least liked, 3: neutral, 5: most liked)");
+        System.out.println("Type 'add' in order to rate a movie and enter the number of the movie first and then enter your rate for the movie");
+        System.out.println("Type 'rec' to recieve your movie recommendations");
+        System.out.println("Type 'e' to exit your movie recommendations");
+        
+        for (int i =0; i<movies.length; i++) {
+            System.out.println(i+1 + "- " + movies[i].movieName + "(" + movies[i].movieYear + ")");
+        }
+        
+        
         do {
+            String input = stdin.nextLine();
+            switch(input) {
+                case "add":
+                    int movieNum = stdin.nextInt() - 1, rate = stdin.nextInt();
+                    movies = evaluate.rater(movies, movieNum, rate);
+                    break;
+                case "rec":
+                    evaluate.recommender(movies);
+                    break;
+                case "E":
+                    exit = true;
+                    break;
+                default:
+                    System.out.print(" ");
+            }
+        } while (!exit);
+       
+       
+       /*   do {
             String input = stdin.nextLine();
             switch(input) {
                 case "a":
@@ -24,6 +55,6 @@ public class ui {
                 default:
                     System.out.println(" wr inp");
             }
-        } while (!exit);
+        } while (!exit); */
     }
 }

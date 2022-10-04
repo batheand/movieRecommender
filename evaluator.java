@@ -12,7 +12,7 @@ public class evaluator {
         int [] [] movieMatchList = new int [50] [3];
         for (int i = 0; i<50; i++) {
             Integer rating = movies[i].getRating();
-            System.out.println(rating);
+            //System.out.println(rating);
             movieMatchList[i] [1] = 5;
             if (rating != 3) {
                 movieMatchList[i] [0] = i;
@@ -75,9 +75,9 @@ public class evaluator {
                 }
             } else {
                 if(category.equals(0)) {
-                    points += 7;
-                } else {
                     points += 0;
+                } else {
+                    points += 7;
                 }
             }
         }
@@ -95,7 +95,7 @@ public class evaluator {
                     Integer category = categories[j] ;
                     Double profiledCategory = profiledCategories[j];
                     if (!(category.equals(0))) {
-                        if (profiledCategory.equals(0)) {
+                        if (profiledCategory.equals(0.0)) {
                             profiledCategories[j] = (profiledCategories[j] + (rating*category));
                         }else{
                         profiledCategories[j] = (profiledCategories[j] + (rating*category))/2;

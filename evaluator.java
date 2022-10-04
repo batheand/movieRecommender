@@ -25,9 +25,10 @@ public class evaluator {
             } 
         }
         movieMatchList = sorter(movieMatchList);
-        System.out.println(movies[movieMatchList[0][0]].movieName + " " +(movieMatchList[0][1]));
-        System.out.println(movies[movieMatchList[1][0]].movieName + " " +(movieMatchList[1][1]));
-        System.out.println(movies[movieMatchList[2][0]].movieName + " " +(movieMatchList[2][1]));
+        System.out.println("Top 3 matches are:");
+        System.out.println("1- " + movies[movieMatchList[0][0]].movieName + " " +(movieMatchList[0][1]) + "%");
+        System.out.println("2- " + movies[movieMatchList[1][0]].movieName + " " +(movieMatchList[1][1]) + "%");
+        System.out.println("3- " + movies[movieMatchList[2][0]].movieName + " " +(movieMatchList[2][1]) + "%");
     }
 
     public int [] [] sorter (int [] [] movieMatchList) {

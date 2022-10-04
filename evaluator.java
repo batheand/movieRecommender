@@ -12,7 +12,6 @@ public class evaluator {
         int [] [] movieMatchList = new int [50] [3];
         for (int i = 0; i<50; i++) {
             Integer rating = movies[i].getRating();
-            //System.out.println(rating);
             movieMatchList[i] [1] = 5;
             if (rating != 3) {
                 movieMatchList[i] [0] = i;
@@ -85,11 +84,11 @@ public class evaluator {
         movies[movieNum].setMatchPercentage(points);
         return (points+2);
     }
+   
     public double [] profiling(movie [] movies) { 
         double [] profiledCategories = {0,0,0,0,0,0,0,0,0,0,0,0,0,0};
         for (int i = 0; i<50; i++) {
             Integer rating = movies[i].getRating();
-            //System.out.println(rating);
             if (!rating.equals(3)) {
                 int [] categories = movies[i].getCategories();
                 for (int j = 0; j<14; j++) {
@@ -105,15 +104,10 @@ public class evaluator {
                 }
             }            
         }
-        /* 
-        for (int j = 0; j<13; j++) {
-            System.out.println(profiledCategories[j]);
-        }
-        */
         return profiledCategories;
     }
 
-    public movie [] rater(movie [] movies, int movieNum, int rate) { //works
+    public movie [] rater(movie [] movies, int movieNum, int rate) { 
         movies[movieNum].setRating(rate);
         return movies;
     }
@@ -285,17 +279,4 @@ public class evaluator {
         return movies;
     }
 
-    
-
-    
-    
-    
-    
-    
-   
-   
-
-
-
-   
 }

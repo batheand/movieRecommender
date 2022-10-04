@@ -25,9 +25,9 @@ public class evaluator {
             } 
         }
         movieMatchList = sorter(movieMatchList);
-        System.out.println(movies[movieMatchList[0][0]].movieName + " " +(movieMatchList[0][1] + 2));
-        System.out.println(movies[movieMatchList[1][0]].movieName + " " +(movieMatchList[1][1] + 2));
-        System.out.println(movies[movieMatchList[2][0]].movieName + " " +(movieMatchList[2][1] + 2));
+        System.out.println(movies[movieMatchList[0][0]].movieName + " " +(movieMatchList[0][1]));
+        System.out.println(movies[movieMatchList[1][0]].movieName + " " +(movieMatchList[1][1]));
+        System.out.println(movies[movieMatchList[2][0]].movieName + " " +(movieMatchList[2][1]));
     }
 
     public int [] [] sorter (int [] [] movieMatchList) {
@@ -82,7 +82,7 @@ public class evaluator {
             }
         }
         movies[movieNum].setMatchPercentage(points);
-        return points;
+        return (points+2);
     }
     public double [] profiling(movie [] movies) { 
         double [] profiledCategories = {0,0,0,0,0,0,0,0,0,0,0,0,0,0};

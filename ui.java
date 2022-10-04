@@ -34,7 +34,7 @@ public class ui {
                     exit = true;
                     break;
                 default:
-                    System.out.print(" ");
+                    System.out.print("");
             }
         } while (!exit);
        

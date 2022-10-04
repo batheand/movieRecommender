@@ -69,9 +69,9 @@ public class evaluator {
                 points +=3;
             } else if (profiledCategories[i] <= 3.5 && profiledCategories[i] < 4.5) {
                 if(category.equals(0)){
-                    points += 6;
-                } else {
                     points += 1;
+                } else {
+                    points += 6;
                 }
             } else {
                 if(category.equals(0)) {

@@ -1,4 +1,5 @@
 This project visions an algorithm that's capable of profiling someone by their likes and dislikes, and use this profilisation for recommending movies and
 also providing match percantage. It gives a list of 3 movies which would be picked by the algorithm as the top 3 matches.
 
-The project is complete except for the UI. The algorithm which profiles one's interests, sorts and recommends movies (evaluator.java) has been coded by Batuhan Yıldız. UI will be handled by Can Mızraklı and Gökay Toğa.
+The project is complete except for the UI. The algorithm which profiles one's interests, sorts and recommends movies (evaluator.java) has been coded 
+by Batuhan Yıldız. UI will be handled by Can Mızraklı and Gökay Toğa.
